@@ -1,13 +1,18 @@
 {
-  "name": "kafka",
+  "name": "template-api-typescript",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
   "scripts": {
-    "dev": "npx ts-node ./src/index.ts"
+    "dev": "dotenv -e .env ts-node ./src/index.ts",
+    "build": "tsc",
+    "start": "node --env-file=.env ./dist/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alan Patriarca",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0",
@@ -17,6 +22,7 @@
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.1.0",
+    "dotenv-cli": "^10.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
