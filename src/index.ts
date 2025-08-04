@@ -4,6 +4,8 @@ import { router } from "./routes/router";
 import { dataSource } from "./config/database";
 
 async function index() {
+    const port = process.env.PORT || 3000;
+
     try {
         // await dataSource.initialize();
         console.log("Data Source has been initialized!")
@@ -14,8 +16,8 @@ async function index() {
     app.use(express.json());
     app.use(router);
     
-    app.listen(3000, () => {
-        console.log("Aplication is running in port 3000")
+    app.listen(port, () => {
+        console.log(`Aplication is running in port ${port}`)
     });
 }
 
